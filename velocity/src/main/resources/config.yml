@@ -1,0 +1,28 @@
+# MultiAccount (Velocity側) 設定
+# 重複ログインの判定・割り当てはこちらが主導します。
+
+# 同時多重ログインの最大セッション数（本人+複製 合計）
+max-duplicates: 10
+
+# 複製アカウントのSuffixフォーマット (Java String.format 形式)
+# %d の位置にスロット番号(2,3,...)が入る。例: "_%02d" -> "_02".."_10"
+suffix-format: "_%02d"
+
+# ホワイトリスト永続化ファイル（/multiaccount whitelist コマンドで自動更新）
+whitelist-file: "whitelist.yml"
+
+# 管理コマンドを実行できる管理者UUID一覧
+admins:
+  []
+
+# Paper側からのコマンド転送チャンネル/タイムアウト
+bridge-channel: "multiaccount:main"
+bridge-timeout-seconds: 5
+
+# セッション状態の整合性チェック間隔(秒)
+reconcile-interval-seconds: 30
+
+messages:
+  prefix: "<gray>[MultiAccount]</gray> "
+  duplicate-denied: "<red>このアカウントは多重ログインが許可されていません。"
+  limit-reached: "<red>多重ログインの上限に達しています。"

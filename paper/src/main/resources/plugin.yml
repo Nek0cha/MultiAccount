@@ -1,0 +1,13 @@
+name: MultiAccountPaper
+main: net.ny4n.multiaccount.paper.MultiAccountPaperPlugin
+version: '${version}'
+api-version: '1.21'
+author: ny4n
+description: "同一Mojangアカウントによるデバッグ用多重ログインのOP同期・コマンド転送を行うプラグイン"
+commands:
+  multiaccount:
+    aliases: [ma]
+    description: "MultiAccount管理コマンド(Velocityへ転送されます)"
+permissions:
+  multiaccount.command:
+    default: op

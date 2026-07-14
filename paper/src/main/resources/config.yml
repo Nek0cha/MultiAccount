@@ -1,0 +1,14 @@
+# MultiAccount (Paper側) 設定
+# 判定ロジックの主導権はVelocity側にあります。こちらはOP同期と
+# コマンド転送の受け口のみを担当します。
+
+# 複製プロフィール名の判定用正規表現。
+# Velocity側の suffix-format ("_%02d" など) に対応させること。
+suffix-regex: "_(\\d{2})$"
+
+# ベースアカウントのOP状態を複製アカウントへ自動同期する
+enable-op-sync: true
+
+# Velocityへコマンドを転送する際のチャンネル・タイムアウト
+bridge-channel: "multiaccount:main"
+bridge-timeout-seconds: 5
